@@ -25,5 +25,21 @@ def main_page():
     return render_template('list.html', all_candidates=all_candidates)
 
 
+@app.route('/candidate/<int:candidate_id>')
+def page_candidate(candidate_id: int) -> str:
+    """
+    Возвращает страницу кандидата.
+
+    Вывод информации о кандидате по его id.
+
+    Возвращаемое значение:
+            str: Информация о кандидатe.
+    """
+    result_candidate = candidates.get_candidate(candidate_id)
+    if not result_candidate:
+        return 'Кандидата с таким id нет'
+    return render_template('card.html', result_candidate=result_candidate)
+
+
 if __name__ == '__main__':
     app.run()

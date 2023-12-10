@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang='ru'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Кандидаты</title>
+    </head>
+    <body>
+        <h1>Кандидат с id {{result_candidate['id']}}</h1>
+        <hr>
+        <br/>
+        <p>
+            <h2>{{result_candidate['name']}}</h2>
+            <p>{{result_candidate['position']}}</p>
+            <img src = {{result_candidate['picture']}} alt ='Фотография' width=200/>
+            <p>Навыки кандидата: {{result_candidate['skills']}}</p>
+        </p>
+        <p>
+            <p><a href='/'> Вернуться на главную страницу</a> </p>
+        </p>
+        
+    </body>
+</html>
