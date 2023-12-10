@@ -64,3 +64,19 @@ class Candidates:
             if name.lower() in candidates['name'].lower():
                 candidates_by_name.append(candidates)
         return candidates_by_name
+
+    def get_candidates_by_skill(self, skill: str) -> list[dict]:
+        """
+        Возвращает кандидатов по навыку.
+
+        Параметры:
+            skill (str): Навык кандидата.
+
+        Возвращаемое значение:
+                candidates_by_skill (list[dict]): Информация о кандидатах.
+        """
+        candidates_by_skill: list[dict] = []
+        for candidates in self.load_candidates_from_json():
+            if skill.lower() in candidates['skills'].lower():
+                candidates_by_skill.append(candidates)
+        return candidates_by_skill
