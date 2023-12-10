@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='ru'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Кандидаты</title>
+    </head>
+    <body>
+        <h1>Кандидаты с навыком {{skill}}</h1>
+        <hr>
+        <br/>
+        <p>
+            
+            {% for candidate in result_candidates %} 
+            <h2>{{candidate['name']}}</h2>
+            <p>{{candidate['position']}}</p>
+            <img src = {{candidate['picture']}} alt ='Фотография' width=200/>
+            <p>Навыки кандидата: {{candidate['skills']}}</p>
+            {% endfor %}
+        </p>
+        <p>
+            <p><a href='/'> Вернуться на главную страницу</a> </p>
+        </p>
+        
+    </body>
+</html>

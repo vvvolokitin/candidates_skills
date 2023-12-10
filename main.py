@@ -37,8 +37,32 @@ def page_candidate(candidate_id: int) -> str:
     """
     result_candidate = candidates.get_candidate(candidate_id)
     if not result_candidate:
-        return 'Кандидата с таким id нет'
+        return (
+            'Кандидата с таким id нет <p><a href="/"> Вернуться на главную '
+            'страницу</a> </p>'
+        )
     return render_template('card.html', result_candidate=result_candidate)
+
+
+@app.route('/skill/<skill>')
+def page_skill(skill: str) -> str:
+    """
+    Возвращает страницу с кандидатами по навыкам.
+
+    Вывод на страницу иформацию о всех кандидатах с указанными навыками.
+
+    Возвращаемое значение:
+            str: Информация о кандидатах.
+    """
+    result_candidates = candidates.get_candidates_by_skill(skill)
+    if not result_candidates:
+        return (
+            'Кандидатов с таким навыком нет <p><a href="/"> Вернуться на главную '
+            'страницу</a> </p>'
+        )
+    return render_template(
+        'skill.html', skill=skill, result_candidates=result_candidates
+    )
 
 
 if __name__ == '__main__':
