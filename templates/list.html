@@ -8,6 +8,14 @@
         <h1>Список кандидатов</h1>
         <hr>
         <br/>
+        <p> 
+            <h2>Поиск по имени</h2><br>
+            <form name="idform">
+                <input type="text" name="id" value="Ivan">
+                <input type="button" value="поиск" onclick="location.href='/search/'+escape(document.forms['idform'].elements['id'].value)">
+            </form>
+
+        </p>
         <p>
             {% for id, name in all_candidates %} 
             <p><a href='/candidate/{{id}}'> {{name}}</a> </p>
