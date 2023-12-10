@@ -33,3 +33,14 @@ class Candidates:
                 list[dict]: Информация о кандидатах.
         """
         return self.candidates
+
+    def get_candidate(self, candidate_id):
+        """
+        Возвращает одного кандидата по его id.
+
+        Возвращаемое значение:
+                candidate (dict): Информация о кандидате.
+        """
+        for candidate in self.load_candidates_from_json():
+            if candidate['id'] == candidate_id:
+                return candidate
