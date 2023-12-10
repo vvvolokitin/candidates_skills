@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "name": "Александра Александрова",
+      "name": "Alexander Alexandrov",
       "picture": "https://picsum.photos/200",
       "position": "Go разработчик",
       "gender": "female",
@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "name": "Юлия Иванова",
+      "name": "Julia Ivanova",
       "picture": "https://picsum.photos/200",
       "position": "Delphi developer",
       "gender": "female",
@@ -19,7 +19,7 @@
     },
     {
       "id": 3,
-      "name": "Петр Петров",
+      "name": "Petr petrov",
       "picture": "https://picsum.photos/200",
       "position": "Team lead",
       "gender": "male",
@@ -28,7 +28,7 @@
     },
     {
       "id": 4,
-      "name": "Иван Иванов",
+      "name": "Ivan Ivanov",
       "picture": "https://picsum.photos/200",
       "position": "CTO",
       "gender": "male",
@@ -37,7 +37,7 @@
     },
     {
       "id": 5,
-      "name": "Степан Кузнецов",
+      "name": "Stepan Kuznezov",
       "picture": "https://picsum.photos/200",
       "position": "HR manager",
       "gender": "male",
@@ -46,7 +46,7 @@
     },
     {
       "id": 6,
-      "name": "Василий Васильев",
+      "name": "Vasiliy Vasilyev",
       "picture": "https://picsum.photos/200",
       "position": "python-develop",
       "gender": "male",
@@ -55,7 +55,7 @@
     },
     {
       "id": 7,
-      "name": "Дарья Сидорова",
+      "name": "Darya Sidorova",
       "picture": "https://picsum.photos/200",
       "position": "Django developer",
       "gender": "female",

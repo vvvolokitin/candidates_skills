@@ -57,11 +57,33 @@ def page_skill(skill: str) -> str:
     result_candidates = candidates.get_candidates_by_skill(skill)
     if not result_candidates:
         return (
-            'Кандидатов с таким навыком нет <p><a href="/"> Вернуться на главную '
-            'страницу</a> </p>'
+            'Кандидатов с таким навыком нет <p><a href="/"> '
+            'Вернуться на главную страницу</a> </p>'
         )
     return render_template(
         'skill.html', skill=skill, result_candidates=result_candidates
+    )
+
+
+@app.route('/search/<name>')
+def page_search(name: str) -> str:
+    """
+    Возвращает страницу с кандидатами по имени.
+
+    Вывод на страницу иформацию о всех кандидатах с указанным именем.
+
+    Возвращаемое значение:
+            str: Информация о кандидатах.
+    """
+    result_candidates = candidates.get_candidates_by_name(name)
+    if not result_candidates:
+        return (
+            'Кандидатов с таким именем нет <p><a href="/"> '
+            'Вернуться на главную страницу</a> </p>'
+        )
+    return render_template(
+        'search.html', name=name.capitalize(),
+        result_candidates=result_candidates
     )
 
 
