@@ -25,7 +25,7 @@ class Candidates:
         with open(candidates, 'r', encoding='utf-8') as file:
             self.candidates = json.load(file)
 
-    def load_candidates_from_json(self):
+    def load_candidates_from_json(self) -> list[dict]:
         """
         Возвращает список кандидатов с их характерситиками.
 
@@ -34,9 +34,12 @@ class Candidates:
         """
         return self.candidates
 
-    def get_candidate(self, candidate_id):
+    def get_candidate(self, candidate_id: int):
         """
         Возвращает одного кандидата по его id.
+
+        Параметры:
+            candidate_id: (int): id кандидата.
 
         Возвращаемое значение:
                 candidate (dict): Информация о кандидате.
@@ -44,3 +47,20 @@ class Candidates:
         for candidate in self.load_candidates_from_json():
             if candidate['id'] == candidate_id:
                 return candidate
+        return None
+
+    def get_candidates_by_name(self, name: str) -> list[dict]:
+        """
+        Возвращает кандидатов по имени.
+
+        Параметры:
+            name (str): Имя кандидата.
+
+        Возвращаемое значение:
+                candidates_by_name (list[dict]): Информация о кандидатах.
+        """
+        candidates_by_name: list[dict] = []
+        for candidates in self.load_candidates_from_json():
+            if name.lower() in candidates['name'].lower():
+                candidates_by_name.append(candidates)
+        return candidates_by_name
